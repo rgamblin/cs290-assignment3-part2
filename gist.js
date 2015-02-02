@@ -114,43 +114,32 @@ function gistDisplay(ul, url, description, id)
 
 window.onload = function() {
   var favoritesList = JSON.parse(localStorage.getItem('favoritesList'));
-  var table = document.getElementById('favorites_table');
-  var ul = document.getElementById('gist_results');
-  
-  
-  
-  
-  
+  var ul = document.getElementById('favorites_list');
+  var li = document.createElement("li");
   
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
   }
 
   
-  
-  var tr = document.createElement('tr');
-  var td = document.createElement('td');
-  var cellText = document.createTextNode('test');
-  td.appendChild(cellText);
-  tr.appendChild(td);
-  table.appendChild(tr);
 
   if (favoritesList) {
 
 
     for (var i = 0; i < favoritesList.length; i++)
     {
-      var tr = document.createElement('tr');
-      var td = document.createElement('td');
-      var cellText = document.createTextNode(favoritesList[i]);
-      td.appendChild(cellText);
-      tr.appendChild(td);
-      table.appendChild(tr);
+      li.textContent = favoritesList[i];
+      ul.appendChild(li);
 
 
     }
+    
   }
-
+  else
+  {
+    li.textContent = 'None!';
+    ul.appendChild(li);
+  }
   
 
 
