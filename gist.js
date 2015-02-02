@@ -4,9 +4,14 @@ function saveFavorite(id)
   var favoritesList = JSON.parse(localStorage.getItem('favoritesList'));
 
   if (!favoritesList)
-    favoritesList = new Array();
+  {
+    favoritesList = {size, list};
+    favoritesList.list = new Array();
+    favoritesList.size = 0;
+  };
 
-  favoritesList.push(id);
+  favoritesList.list[favoritesList.size] = id;
+  favoritesList.size++;
 
   localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
 
@@ -126,9 +131,9 @@ window.onload = function() {
   if (favoritesList) {
 
 
-    for (var i = 0; i < favoritesList.length; i++)
+    for (var i; i<favoritesList.size; i++)
     {
-      li.textContent = favoritesList[i];
+      li.textContent = favoritesList.list[i];
       ul.appendChild(li);
 
 
