@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Assignment 3 Part 2</title>
+    <script src='gist.js'></script>
+  </head>
+
+  <body>
+    <section>
+      <table>
+        <caption>Favorites</caption>
+        <tbody id="favorits_table">
+          
+        </tbody>
+      </table>
+    </section>
+	
+	
+    <section>
+      <form action="gist.html" method="get">
+        <label>Pages of Results <select name="numberPages"></label>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br><label><input type="checkbox" name="python">Python</label>
+        <br><label><input type="checkbox" name="json">JSON</label>
+        <br><label><input type="checkbox" name="javaScript">JavaScript</label>
+        <br><label><input type="checkbox" name="sql">SQL</label>
+        
+        <br><button type="button" onclick="searchGist()">Search</button>
+      </form>
+    </section>
+    
+    <section>
+      <ul id="gist_results">
+      </ul>
+    </section>
+	
+	
+	
+  </body>
+</html>
